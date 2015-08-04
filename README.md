@@ -1,5 +1,13 @@
 #git 学习笔记
 
+参考资料：
+
+<http://blog.csdn.net/five3/article/details/8904635>
+
+<http://www.bootcss.com/p/git-guide/>
+
+<http://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html>
+
 -----------------------------------------------------
 ## 创建新仓库
 创建新文件夹，打开，然后执行 `git init` 以创建新的 git 仓库。
