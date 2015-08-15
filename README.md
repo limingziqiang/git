@@ -28,6 +28,11 @@
 *   第二个是 缓存区（Index），它像个缓存区域，临时保存你的改动；
 *   最后是 HEAD，指向你最近一次提交后的结果。`
 
+## 本地配置
+
+  git config --global user.name 'onovps'
+  git config --global user.email 'onovps@onovps.com' #全局联系方式，可选
+
 ## 添加与提交
 查看状态
 
