@@ -91,3 +91,23 @@
 `git fetch origin`
 
 `git reset --hard origin/master`
+
+## 避免每次操作需要输入密码
+
+#### 1. 在宿主目录下创建文件存储GIT用户名和密码
+
+    cd ~
+    vim .git-credentials
+        https://username:password@github.com
+        https://username:password@git.oschina.net
+
+#### 2. 添加Git Config 内容
+
+    git config --global credential.helper store
+    
+执行完后查看~目录下的.gitconfig文件，会多了一项：
+
+    [credential]
+        helper = store
+        
+重新开启bash会发现git push时不用再输入用户名和密码
