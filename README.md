@@ -30,8 +30,8 @@
 
 ## 本地配置
 
-  git config --global user.name 'onovps'
-  git config --global user.email 'onovps@onovps.com' #全局联系方式，可选
+    git config --global user.name 'onovps'
+    git config --global user.email 'onovps@onovps.com' #全局联系方式，可选
 
 ## 添加与提交
 查看状态
