@@ -87,7 +87,8 @@
 删除远程分支：
 
     git branch -r -d origin/<branch>
-    git push origin:<branch>
+    git push origin :<branch>
+    注：冒号前面必须输入一个空格！
 
 ## 提交分支：
 
