@@ -79,10 +79,7 @@
 
 创建并切换到新分支：`git checkout -b <branch>`
 
-基于远程分支建立本地分支：
-
-    方法一： git checkout -b <branch> origin/<branch>
-    方法二： git checkout --track origin/<branch> 
+基于远程分支建立本地分支： `git checkout --track origin/<branch>` 
 
 ## 删除分支
 删除本地分支：`git branch -d <branch>`
