@@ -77,7 +77,7 @@
 
 创建本地分支：`git branch <branch>` 
 
-创建并切换到新分支：`git checkout -b <branch>`
+基于当前分支创建并切换到新分支：`git checkout -b <branch>`
 
 基于远程分支建立本地分支： `git checkout --track origin/<branch>` 
 
