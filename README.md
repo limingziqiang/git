@@ -1,4 +1,4 @@
-#git 学习笔记
+git 学习笔记
 
 参考资料：
 
@@ -12,8 +12,8 @@
 
 <http://blog.csdn.net/dijason/article/details/9042425>
 
------------------------------------------------------
-# （一）基础
+
+# 基础
 
 ## 工作流
 本地仓库由 git 维护的三棵“树”组成。
@@ -29,26 +29,25 @@
 
 ## 避免每次操作需要输入密码
 
-#### 1. 在宿主目录下创建文件存储GIT用户名和密码
+* 在宿主目录下创建文件存储GIT用户名和密码
 
-    cd ~
-    vim .git-credentials
-        https://username:password@github.com
-        https://username:password@git.oschina.net
+        cd ~
+        vim .git-credentials
+            https://username:password@github.com
+            https://username:password@git.oschina.net
 
-#### 2. 添加Git Config 内容
+* 添加Git Config 内容
 
-    git config --global credential.helper store
+        git config --global credential.helper store
     
-执行完后查看~目录下的.gitconfig文件，会多了一项：
+    执行完后查看~目录下的.gitconfig文件，会多了一项：
+    
+        [credential]
+            helper = store
+            
+    重新开启bash会发现git push时不用再输入用户名和密码
 
-    [credential]
-        helper = store
-        
-重新开启bash会发现git push时不用再输入用户名和密码
-
------------------------------------------------------
-# （二）仓库
+# 仓库
 
 ## 创建仓库
 创建新文件夹，打开，然后执行 `git init` 以创建新的 git 仓库。
@@ -62,8 +61,7 @@
 
 `git clone username@host:/path/to/repository`
 
------------------------------------------------------
-# （三）分支
+# 分支
 
 ## 查看分支
 查看本地分支：`git branch`
@@ -107,7 +105,7 @@
 
 在合并改动之前，也可以使用如下命令查看：`git diff <source_branch> <target_branch>`
 
-# （四）提交代码
+# 提交代码
 查看状态：`git status`
 
 
