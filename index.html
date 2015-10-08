@@ -1,0 +1,165 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p>git 学习笔记</p>
+<p>参考资料：</p>
+<p><a href="http://blog.csdn.net/five3/article/details/8904635">http://blog.csdn.net/five3/article/details/8904635</a></p>
+<p><a href="http://www.bootcss.com/p/git-guide/">http://www.bootcss.com/p/git-guide/</a></p>
+<p><a href="http://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html">http://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html</a></p>
+<p><a href="http://www.cnblogs.com/ballwql/p/3462104.html">http://www.cnblogs.com/ballwql/p/3462104.html</a></p>
+<p><a href="http://blog.csdn.net/dijason/article/details/9042425">http://blog.csdn.net/dijason/article/details/9042425</a></p>
+<h1 id="-">基础</h1>
+<h2 id="-">工作流</h2>
+<p>本地仓库由 git 维护的三棵“树”组成。</p>
+<ul>
+<li>第一个是你的 工作目录，它持有实际文件；</li>
+<li>第二个是 缓存区（Index），它像个缓存区域，临时保存你的改动；</li>
+<li>最后是 HEAD，指向你最近一次提交后的结果。`</li>
+</ul>
+<h2 id="-">本地配置</h2>
+<pre><code>git config --global user.name &#39;onovps&#39;
+git config --global user.email &#39;onovps@onovps.com&#39; #全局联系方式，可选
+</code></pre><h2 id="-">避免每次操作需要输入密码</h2>
+<ul>
+<li><p>在宿主目录下创建文件存储GIT用户名和密码</p>
+<pre><code>  cd ~
+  vim .git-credentials
+      https://username:password@github.com
+      https://username:password@git.oschina.net
+</code></pre></li>
+<li><p>添加Git Config 内容</p>
+<pre><code>  git config --global credential.helper store
+</code></pre><p>  执行完后查看~目录下的.gitconfig文件，会多了一项：</p>
+<pre><code>  [credential]
+      helper = store
+</code></pre><p>  重新开启bash会发现git push时不用再输入用户名和密码</p>
+</li>
+</ul>
+<h1 id="-">仓库</h1>
+<h2 id="-">创建仓库</h2>
+<p>创建新文件夹，打开，然后执行 <code>git init</code> 以创建新的 git 仓库。</p>
+<h2 id="-">克隆仓库</h2>
+<p>执行如下命令以创建一个本地仓库的克隆版本：</p>
+<p><code>git clone /path/to/repository</code></p>
+<p>如果是远端服务器上的仓库，你的命令会是这个样子：</p>
+<p><code>git clone username@host:/path/to/repository</code></p>
+<h1 id="-">分支</h1>
+<h2 id="-">查看分支</h2>
+<p>查看本地分支：<code>git branch</code></p>
+<p>查看远程分支：<code>git branch -r</code></p>
+<p>查看所有分支：<code>git branch -a</code></p>
+<h2 id="-">创建分支</h2>
+<p>切换分支：<code>git checkout &lt;branch&gt;</code></p>
+<p>创建本地分支：<code>git branch &lt;branch&gt;</code> </p>
+<p>基于当前分支创建并切换到新分支：<code>git checkout -b &lt;branch&gt;</code></p>
+<p>基于远程分支建立本地分支： <code>git checkout --track origin/&lt;branch&gt;</code> </p>
+<h2 id="-">删除分支</h2>
+<p>删除本地分支：<code>git branch -d &lt;branch&gt;</code></p>
+<p>删除远程分支：</p>
+<pre><code>git branch -r -d origin/&lt;branch&gt;
+git push origin :&lt;branch&gt;
+
+注：冒号前面必须输入一个空格！
+</code></pre><h2 id="-">提交分支：</h2>
+<p>对当前分支打标记：<code>git tag tagContent</code></p>
+<p>提交分支：<code>git push origin &lt;branch&gt;:&lt;branch&gt;</code></p>
+<h2 id="-">合并分支：</h2>
+<p>要更新本地仓库至最新改动：<code>git pull</code></p>
+<p>要合并其他分支到当前分支：<code>git merge &lt;branch&gt;</code></p>
+<p>注：自动合并并非次次都能成功，并可能导致 冲突（conflicts）</p>
+<p>在合并改动之前，也可以使用如下命令查看：<code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code></p>
+<h1 id="-">提交代码</h1>
+<p>查看状态：<code>git status</code></p>
+<p>计划改动（把它们添加到缓存区）：<code>git add &lt;filename&gt;</code></p>
+<p>实际提交改动,改动提交到了 HEAD：<code>git commit -m &quot;comment&quot;</code></p>
+<p>将这些改动提交到远端仓库：<code>git push origin &lt;branch&gt;</code></p>
+<p>使用 HEAD 中的最新内容替换掉工作目录中的文件：<code>git checkout -- &lt;filename&gt;</code></p>
+<p>假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：</p>
+<pre><code>git fetch origin
+git reset --hard origin/master
+</code></pre>
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
