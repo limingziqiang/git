@@ -149,6 +149,8 @@ Git 默认使用 origin 来标识你所克隆的原始仓库
 
 创建本地分支：`git branch <branch>` 
 
+基于本地分支创建远程分支： `git push --set-upstream origin <branch>`
+
 切换分支：`git checkout <branch>`
 
 基于当前分支创建并切换到新分支：`git checkout -b <branch>`
@@ -196,6 +198,16 @@ git branch -d 删除未合并进来的分支会提示错误，可以用大写的
 ## 衍合分支
 
 `$ git rebase master`
+
+## 上行分支
+
+设置：
+
+`$ git push --set-upstream origin <branch>`
+
+取消设置：
+
+`$ git branch --unset-upstream"`
 
 # 基础
 ## 检查当前文件状态
