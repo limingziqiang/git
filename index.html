@@ -154,6 +154,7 @@ vim .git-credentials
 <p>查看尚未合并的工作：<code>git branch --no-merged</code></p>
 <h2 id="-">创建分支</h2>
 <p>创建本地分支：<code>git branch &lt;branch&gt;</code> </p>
+<p>基于本地分支创建远程分支： <code>git push --set-upstream origin &lt;branch&gt;</code></p>
 <p>切换分支：<code>git checkout &lt;branch&gt;</code></p>
 <p>基于当前分支创建并切换到新分支：<code>git checkout -b &lt;branch&gt;</code></p>
 <p>跟踪远程分支： <code>git checkout --track origin/&lt;branch&gt;</code> </p>
@@ -184,6 +185,11 @@ git push origin :&lt;branch&gt;
 到一起。</p>
 <h2 id="-">衍合分支</h2>
 <p><code>$ git rebase master</code></p>
+<h2 id="-">上行分支</h2>
+<p>设置：</p>
+<p><code>$ git push --set-upstream origin &lt;branch&gt;</code></p>
+<p>取消设置：</p>
+<p><code>$ git branch --unset-upstream&quot;</code></p>
 <h1 id="-">基础</h1>
 <h2 id="-">检查当前文件状态</h2>
 <p><code>$ git status</code></p>
