@@ -157,6 +157,8 @@ Git 默认使用 origin 来标识你所克隆的原始仓库
 
 跟踪远程分支： `git checkout --track origin/<branch>` 
 
+重命名本地分支：`git branch -m <oldname> <newname>`
+
 ## 删除分支
 删除本地分支：`git branch -d <branch>`
 
