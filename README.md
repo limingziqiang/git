@@ -1,15 +1,3 @@
-git 学习笔记
-
-参考资料：
-
-<http://git.oschina.net/progit/index.html>
-
-<http://www.bootcss.com/p/git-guide/>
-
-<http://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html>
-
-<http://www.cnblogs.com/ballwql/p/3462104.html>
-
 # 起步
 
 ## 安装
@@ -94,6 +82,10 @@ git 学习笔记
             
     重新开启bash会发现git push时不用再输入用户名和密码
 
+-   详情
+
+    <http://www.cnblogs.com/ballwql/p/3462104.html>
+    
 ## 查看帮助
 
 三种方法：
